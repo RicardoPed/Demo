@@ -15,17 +15,31 @@ class Player(Sprite):
         self.rect.center = (WIDTH /2, HEIGHT/2)
         self.vx = 0
         self.vy = 0
+        self.falling = False
+        self.max_velocity = -25
     def update(self):
         self.vx = 0
+        self.gravity()
         keys = pg.key.get_pressed()
         if keys[pg.K_LEFT]:
             self.vx = -5
         if keys[pg.K_RIGHT]:
             self.vx = 5
-        if keys[pg.K_UP]:
-            self.vy = -5
-        if keys[pg.K_DOWN]:
-            self.vy = 5   
-        
+        if keys[pg.K_UP] and self.falling == False:
+            self.jump()  
+
         self.rect.x += self.vx
         self.rect.y += self.vy
+    def gravity(self):
+        if self.rect.y < HEIGHT-40:
+            self.falling = True
+            self.vy += 10
+        elif self.rect.y >= HEIGHT: 
+            self.falling = False
+            self.vy = 0
+            self.rect.y = HEIGHT-40
+    # def borders(self):
+    #     if self.rect.x == WIDTH:
+    #         self.vx = 0
+    def jump(self):
+        self.vy = -100
