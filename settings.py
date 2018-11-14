@@ -1,8 +1,8 @@
 #This file was created by Ricardo Pedrayes
-TITLE = "jumpy"
+TITLE = "Project PONG"
 # screen dims
-WIDTH = 480
-HEIGHT = 600
+WIDTH = 650
+HEIGHT = 480
 # frames per second
 FPS = 30
 # colors
