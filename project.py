@@ -1,4 +1,4 @@
-#This file was created by Ricardo Pedrayes
+#This file was created by Ricardo Pedrayes and Jacob Tarango
 
 from settings import *
 from sprites import *
@@ -19,13 +19,20 @@ class Game:
         self.all_sprites = pg.sprite.Group()
         self.player_1 = Player()
         self.player_2 = Player()
+        self.Linea = Object()
+        self.Round = Ball()
         # Player 2 controls and other info
         self.player_2.up = pg.K_w
         self.player_2.down = pg.K_s
         self.player_2.rect.center = (WIDTH/12, HEIGHT/2)
 
+        #self.player_3 = pg.Surface((10,HEIGHT))
+        # self.player_3.rect1.center = (WIDTH*6/12, HEIGHT/2)
+
         self.all_sprites.add(self.player_1)
         self.all_sprites.add(self.player_2)
+        self.all_sprites.add(self.Linea)
+        self.all_sprites.add(self.Round)
         self.run()
         # create new player object
     def run(self):
@@ -53,6 +60,7 @@ class Game:
         self.all_sprites.draw(self.screen)
         #double buffer
         pg.display.flip()
+        # pg.draw.line(self.image,(0,0,0),(xy),(x,y+h), 2)
 
     def show_start_screen(self):
         pass
