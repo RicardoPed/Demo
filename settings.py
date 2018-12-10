@@ -4,11 +4,10 @@ TITLE = "Project PONG"
 WIDTH = 650
 HEIGHT = 480
 # frames per second
-FPS = 30
+FPS = 120
 # colors
 WHITE = (255, 255, 255)
 BLACK = (0,0,0)
 REDDISH = (240, 55, 66)
-
-BALL_VELOCITY = 10
-BALL_WIDTH = 10
+#Ball attributes
+VELOCITY = 2.5
