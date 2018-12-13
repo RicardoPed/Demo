@@ -45,6 +45,7 @@ class Game:
             self.events()
             self.update()
             self.draw()
+                
 
     def update(self):
         self.players.update()
@@ -55,9 +56,9 @@ class Game:
             hit = pg.sprite.spritecollideany(self.ball, self.players, False)
             if hit:
                 self.ball.vx = -self.ball.vx * 2
-                self.ball.vy = self.ball.vy + randint(0,3)
-            # if hit = True:
-            #     self.vx = -vx
+                self.ball.vy = self.ball.vy + randint(0,2)
+            #if hit = True:
+                #self.vx = -vx
                 
 
         # update thingsw
@@ -92,8 +93,9 @@ g.show_start_screen()
 
 
 
+
 while g.running:
     g.new()
     g.show_go_screen()
-
+            
 pg.quit()

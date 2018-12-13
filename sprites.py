@@ -20,7 +20,7 @@ class Player(Sprite):
         self.up = pg.K_UP
         self.down = pg.K_DOWN
     def wall1_collision(self):
-        if self.rect.y >= HEIGHT - 5 or self.rect.y <= 5:
+        if self.rect.y >= HEIGHT - 14 or self.rect.y <= 14:
             self.vy = -self.vy
 
     def update(self):
@@ -34,7 +34,7 @@ class Player(Sprite):
             self.vy = 7.5
         if keys[pg.K_BACKSPACE]:
             pg.quit()
-        self.wall1_collision
+        self.wall1_collision()
         # if keys[pg.K_UP] and self.falling == False:
         #     self.jump()  
 
@@ -78,8 +78,13 @@ class Ball(Sprite):
     def wall_collision(self):
         if self.rect.y >= HEIGHT - 5 or self.rect.y <= 5:
             self.vy = -self.vy
-
+    def pass_paddles(self):
+        if self.rect.x >= WIDTH - 5 or self.rect.x <= 5:
+            self.rect.center = (WIDTH/2, HEIGHT/2)
+            self.vx = 2.5
     def update(self):
         self.wall_collision()
+        self.pass_paddles()
         self.rect.x += self.vx
         self.rect.y += self.vy
+    #def scoring(self):
