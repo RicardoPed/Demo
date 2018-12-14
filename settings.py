@@ -1,4 +1,4 @@
-#This file was created by Ricardo Pedrayes
+#Settings file for the game
 TITLE = "Project PONG"
 # screen dims
 WIDTH = 650
