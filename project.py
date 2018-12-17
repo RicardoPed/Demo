@@ -1,4 +1,6 @@
 #This file was created by Ricardo Pedrayes and Jacob Tarango
+#Thank you to KidsCanCode and Mr. Cozort for showing the basics on the classes
+#https://stackoverflow.com/
 
 from settings import *
 from sprites import *
